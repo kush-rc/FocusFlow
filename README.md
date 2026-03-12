@@ -1,3 +1,12 @@
+---
+title: FocusFlow
+emoji: 🎯
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+pinned: false
+---
+
 # FocusFlow: Real-Time Meeting Engagement Analytics
 
 > **Premium Engagement Tracking Powered by AI and C++**  
