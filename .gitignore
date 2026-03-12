@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# C++ Build Artifacts
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.lib
+*.dll
+*.dylib
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cpp_modules/build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Data & Logs
+data/*.db
+data/*.db-journal
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/secrets.toml
