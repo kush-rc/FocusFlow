@@ -223,7 +223,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function connectWebSocket() {
-        const wsUrl = `ws://${window.location.host}/ws/stream`;
+        // Dynamically detect protocol for secure environments (Hugging Face)
+        const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+        const wsUrl = `${protocol}//${window.location.host}/ws/stream`;
+        
+        console.log(`Connecting to WebSocket: ${wsUrl}`);
         ws = new WebSocket(wsUrl);
         
         ws.onopen = () => {
