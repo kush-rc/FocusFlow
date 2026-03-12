@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 video.srcObject = null;
                 if (meetingVideo) meetingVideo.srcObject = null;
             }
-            videoOverlay.style.display = 'block';
+            videoOverlay.classList.remove('hidden');
             
             meetingSetup?.classList.remove('hidden');
             meetingActiveVideo?.classList.add('hidden');
