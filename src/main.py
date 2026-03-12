@@ -363,5 +363,12 @@ async def websocket_stream(websocket: WebSocket):
             db.end_session(session_id)
 
 if __name__ == "__main__":
+    import os
+    # Hugging Face Spaces and other cloud providers often use the PORT env var
+    port = int(os.environ.get("PORT", 8000))
+    # In a container/cloud, we must use 0.0.0.0
+    host = "0.0.0.0"
+    
+    print(f"🚀 FocusFlow starting on http://{host}:{port}")
     # Disable reload because writing to the database triggers a server restart loop
-    uvicorn.run("src.main:app", host="0.0.0.0", port=8000, reload=False)
+    uvicorn.run("src.main:app", host=host, port=port, reload=False)
