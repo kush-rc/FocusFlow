@@ -15,10 +15,14 @@ Hugging Face Spaces is the best free option for FocusFlow because it supports Do
 Since your code is already on GitHub, you can either:
 
 ### Method A: Connect GitHub (Easiest)
-1. On your new Space page, go to **Settings**.
-2. Find the **"Connected GitHub Repository"** section.
-3. Link your `kush-rc/FocusFlow` repository.
-4. Hugging Face will automatically build and deploy whenever you push to GitHub.
+1. On your new Space page, go to the **Settings** tab (top right).
+2. Scroll down to the **"Connected Repository"** or **"Github Repository"** section.
+3. If you don't see your repo, click **"Connect your GitHub"** to authorize Hugging Face.
+4. Select your `kush-rc/FocusFlow` repository from the list.
+5. Hugging Face will automatically build and deploy whenever you push to GitHub.
+
+> [!NOTE]
+> If you still can't see the "Connected Repository" section, it might be because the Space was created as a "Standard" Space. Make sure you selected **Docker** as the SDK during creation.
 
 ### Method B: Manually Push via Git
 1. Get the Git URL of your Space (ends in `.git`).

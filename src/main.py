@@ -369,6 +369,6 @@ if __name__ == "__main__":
     # In a container/cloud, we must use 0.0.0.0
     host = "0.0.0.0"
     
-    print(f"🚀 FocusFlow starting on http://{host}:{port}")
+    print(f"FocusFlow starting on http://{host}:{port}")
     # Disable reload because writing to the database triggers a server restart loop
     uvicorn.run("src.main:app", host=host, port=port, reload=False)

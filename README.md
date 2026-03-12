@@ -1,4 +1,4 @@
-# 🎯 FocusFlow: Real-Time Meeting Engagement Analytics
+# FocusFlow: Real-Time Meeting Engagement Analytics
 
 > **Premium Engagement Tracking Powered by AI and C++**  
 > Focused on Professional Productivity and Group Dynamic Monitoring.
@@ -48,19 +48,19 @@ graph TD
 
 ```
 FocusFlow/
-├── cpp_modules/       # ⚡ C++ Performance Module (Source)
-├── frontend/          # 🎨 Modern Web Interface (HTML/CSS/JS)
-├── src/               # 🧠 Core Application Logic
+├── cpp_modules/       # C++ Performance Module (Source)
+├── frontend/          # Modern Web Interface (HTML/CSS/JS)
+├── src/               # Core Application Logic
 │   ├── main.py        # FastAPI Gateway & Websockets
 │   ├── vision_engine.py# AI Vision Orchestrator
 │   ├── database.py    # SQLite Persistence Layer
-│   └── utils/         # 🛠️ Utility Scripts
-├── data/              # 🗄️ Storage (Database files)
-├── architecture.md    # 🏗️ Detailed Technical Docs
+│   └── utils/         # Utility Scripts
+├── data/              # Storage (Database files)
+├── architecture.md    # Detailed Technical Docs
 ├── file_manifest.md   # 📄 Breakdown of every file
-├── run.bat            # 🚀 One-Click Launcher (Windows)
-├── build_cpp.bat      # 🛠️ C++ Compilation Tool
-└── requirements.txt   # 📦 Dependencies
+├── run.bat            # One-Click Launcher (Windows)
+├── build_cpp.bat      # C++ Compilation Tool
+└── requirements.txt   # Dependencies
 ```
 
 ---
