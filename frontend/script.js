@@ -303,11 +303,29 @@ document.addEventListener('DOMContentLoaded', () => {
             if (meetingAvgScore) {
                 meetingAvgScore.textContent = avgScore;
                 meetingAvgScore.style.color = avgScore < 50 ? 'var(--danger)' : (avgScore < 80 ? 'var(--warning)' : 'var(--success)');
+                if (document.getElementById('meeting-engagement-bar')) {
+                    document.getElementById('meeting-engagement-bar').style.width = `${avgScore}%`;
+                }
             }
             if (pCount) pCount.textContent = data.participant_count || 0;
             if (mWarnings) mWarnings.textContent = data.distracted_count || 0;
             
-            // Still update statusText even in meeting mode
+            // New meeting-specific metrics
+            if (document.getElementById('meeting-yawn-count')) {
+                document.getElementById('meeting-yawn-count').textContent = data.yawn_count || 0;
+            }
+            if (document.getElementById('meeting-drowsy-count')) {
+                document.getElementById('meeting-drowsy-count').textContent = data.drowsy_count || 0;
+            }
+            if (data.signals) {
+                if (document.getElementById('meeting-gaze-score')) {
+                    document.getElementById('meeting-gaze-score').textContent = `${Math.round((data.signals.gaze_score || 0) * 100)}%`;
+                }
+                if (document.getElementById('meeting-attention-score')) {
+                    document.getElementById('meeting-attention-score').textContent = `${Math.round((data.signals.attention_score || data.signals.gaze_score || 0) * 100)}%`;
+                }
+            }
+
             if (statusText) statusText.textContent = data.status_text;
             return;
         }
@@ -379,9 +397,11 @@ document.addEventListener('DOMContentLoaded', () => {
     async function startSession(mode = "individual", useScreen = false) {
         sessionMode = mode;
         
-        // If it's an individual session started from elsewhere, switch to live view
-        if (mode === "individual" && !viewLive.classList.contains('active')) {
+        // Always switch to the appropriate view when starting
+        if (mode === "individual") {
             switchView('live');
+        } else {
+            switchView('meeting');
         }
         
         const success = useScreen ? await startScreenShare() : await startCamera();

@@ -199,10 +199,15 @@
                         </div>
                     </div>
                     <div class="metrics-section">
-                        <div class="stat-card glass-panel">
+                        <div class="hero-score-card glass-panel">
                             <h3 class="label">Group Engagement</h3>
                             <div class="score-value" id="meeting-avg-score">--</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="meeting-engagement-bar" style="width: 0%"></div>
+                            </div>
                         </div>
+
+                        <!-- Same stats grid as Live view -->
                         <div class="stats-grid mt-20">
                             <div class="stat-card glass-panel">
                                 <span class="icon"><i data-lucide="user-check"></i></span>
@@ -213,6 +218,31 @@
                                 <span class="icon"><i data-lucide="alert-circle"></i></span>
                                 <div class="value" id="meeting-warnings">0</div>
                                 <div class="label">Distractions</div>
+                            </div>
+                            <div class="stat-card glass-panel">
+                                <span class="icon"><i data-lucide="activity"></i></span>
+                                <div class="value" id="meeting-yawn-count">0</div>
+                                <div class="label">Yawns</div>
+                            </div>
+                            <div class="stat-card glass-panel">
+                                <span class="icon"><i data-lucide="moon"></i></span>
+                                <div class="value" id="meeting-drowsy-count">0</div>
+                                <div class="label">Sleep</div>
+                            </div>
+                        </div>
+
+                        <!-- Same deep metrics as Live view -->
+                        <div class="deep-metrics glass-panel mt-20">
+                            <h3>Meeting Analytics</h3>
+                            <div class="metrics-list">
+                                <div class="metric-item">
+                                    <span class="label">Group Gaze</span>
+                                    <span class="value" id="meeting-gaze-score">--%</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="label">Avg Attention</span>
+                                    <span class="value" id="meeting-attention-score">--%</span>
+                                </div>
                             </div>
                         </div>
                     </div>
