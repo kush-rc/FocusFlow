@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             const currentVideo = sessionMode === "meeting" ? meetingVideo : video;
             currentVideo.srcObject = stream;
-            videoOverlay.style.display = 'none';
+            videoOverlay.classList.add('hidden');
             
             if (sessionMode === "meeting") {
                 meetingSetup.classList.add('hidden');
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             const currentVideo = sessionMode === "meeting" ? meetingVideo : video;
             currentVideo.srcObject = stream;
-            videoOverlay.style.display = 'none';
+            videoOverlay.classList.add('hidden');
             
             if (sessionMode === "meeting") {
                 meetingSetup.classList.add('hidden');
